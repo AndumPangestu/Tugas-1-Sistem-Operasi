@@ -37,6 +37,7 @@ int main()
                 for(j = 0; j < SIZE; j++)
                 {
                     shared[j] = (rand() % 100);
+                    printf("Proses ke-%d menulis %d : %d\n", i, j, shared[j]);
                 }
 
                 break;
@@ -52,7 +53,7 @@ int main()
                         int temp = 0;
                         for(j = 0; j < SIZE; j++)
                         {
-                            printf("Proses ke-%d menulis %d : %d\n", i, j, shared[j]);
+                            printf("Proses ke-%d membaca %d : %d\n", i, j, shared[j]);
                             temp += shared[j];
                         }
 
