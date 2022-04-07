@@ -1,4 +1,4 @@
-# Tugas-1-Sistem-Operasi
+# Tugas-1-Sistem-Operasi -- Kelompok 02
 
 Anggota :
 1. Ahmad Muflih
