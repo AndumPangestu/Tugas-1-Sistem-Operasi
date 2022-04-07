@@ -6,7 +6,7 @@
 #include <sys/mman.h>
 #include <sys/wait.h>
 
-#define ARRSIZE 5
+#define SIZE 5
 
 int main()
 {
@@ -17,7 +17,7 @@ int main()
     scanf("%d", &n);
     int pid[n];
 
-    size = ARRSIZE * sizeof(int);
+    size = SIZE * sizeof(int);
     void *addr = mmap(0, size, PROT_READ | PROT_WRITE, MAP_SHARED | MAP_ANONYMOUS, -1, 0);
 
     printf("Mapped at : %p\n", addr);
@@ -34,15 +34,15 @@ int main()
             
             case 0:
                 printf("Child process %d.\n", (i + 1));
-                shared[0] = (rand() % 100);
-                shared[1] = (rand() % 100);
-                shared[2] = (rand() % 100);
-                shared[3] = (rand() % 100);
-                shared[4] = (rand() % 100);
+                for(j = 0; j < SIZE; j++)
+                {
+                    shared[j] = (rand() % 100);
+                }
+
                 break;
 
             default:
-                printf("Parent process.\n");
+                printf("Parent process %d.\n", (i + 1));
 
                 int pidWait, status;
                 while(pidWait = wait(&status))
@@ -50,7 +50,7 @@ int main()
                     if(pidWait == pid[i])
                     {
                         int temp = 0;
-                        for(j = 0; j < ARRSIZE; j++)
+                        for(j = 0; j < SIZE; j++)
                         {
                             printf("Proses ke-%d menulis %d : %d\n", i, j, shared[j]);
                             temp += shared[j];
@@ -69,6 +69,6 @@ int main()
                 
         }
     }
-    printf("selesai\n");
+
     return 0;
 }

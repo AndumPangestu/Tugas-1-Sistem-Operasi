@@ -51,7 +51,7 @@ int main()
                 read(fd[0], buffer, sizeof(buffer));
                 for(j = 0; j < SIZE; j++)
                 {
-                    // printf("Proses membaca proses %d ke %d : %d\n", (i + 1), j, buffer[j]);
+                    printf("Proses membaca proses %d ke %d : %d\n", (i + 1), j, buffer[j]);
                     total += buffer[j];
                 }
 
