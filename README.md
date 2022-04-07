@@ -4,4 +4,5 @@ Anggota :
 1. Ahmad Muflih
 2. Andhika Dzikri Fadilah
 3. Andum Pangestu
-4. Muhamad Satria Ramadhani
+4. Mohammad Ray Mosaid
+5. Muhammad Satria Ramadhani
